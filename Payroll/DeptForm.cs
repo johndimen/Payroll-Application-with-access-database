@@ -15,7 +15,7 @@ namespace Payroll
     {
         private const string conString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source =C:\\Users\\KLG\\Desktop\\repos\\College-PayrollApplication-master\\Payroll\\payroll_db.accdb";
         readonly OleDbConnection con = new OleDbConnection(conString);
-        OleDbCommand cmd;
+        readonly OleDbCommand cmd;
         public DeptForm()
         {
             InitializeComponent();
@@ -23,8 +23,10 @@ namespace Payroll
 
         private void BackButton_Click(object sender, EventArgs e)
         {
+            /*
             Form1 form1 = new Form1();
             form1.Show();
+            */
             this.Hide();
         }
 
@@ -64,8 +66,8 @@ namespace Payroll
             DataGridViewButtonColumn editbtn = new DataGridViewButtonColumn();
             DeptDataGridView.Columns.Add(delbtn);
             DeptDataGridView.Columns.Add(editbtn);
-            delbtn.Width = 50;
-            editbtn.Width = 50;
+            delbtn.Width = 60;
+            editbtn.Width = 60;
             delbtn.HeaderText = "Actions";
             editbtn.Text = "Edit";
             delbtn.Text = "Delete";

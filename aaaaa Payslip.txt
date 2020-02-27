@@ -1,0 +1,28 @@
+Pay Slip
+
+ ==================== 
+
+Employer Name: iTec-Ming-Ming corp.
+Name: aaaaa
+Department: marketing
+
+ -------------------- 
+
+Date of Pay: Thursday, February 27, 2020
+Week Number: 3
+Hours Worked: 8
+
+ -------------------- 
+
+Gross Pay: ₱448
+Deductions: ₱89.6
+Net Pay: ₱358.4
+
+ ==================== 
+
+This Serves as Official Payslip for aaaaa
+Date of Payment: 2/27/2020
+Date Printed: Thursday, February 27, 2020
+
+ ==================== 
+

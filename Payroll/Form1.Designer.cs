@@ -477,8 +477,9 @@
             this.EmployeeNameText.Name = "EmployeeNameText";
             this.EmployeeNameText.Size = new System.Drawing.Size(202, 20);
             this.EmployeeNameText.TabIndex = 2;
-            this.EmployeeNameText.Text = "Enter name";
+            this.EmployeeNameText.Text = "Enter Name";
             this.EmployeeNameText.Click += new System.EventHandler(this.EmployeeNameText_Click);
+            this.EmployeeNameText.MouseLeave += new System.EventHandler(this.EmployeeNameText_MouseLeave);
             // 
             // Form1
             // 

@@ -10,7 +10,7 @@ namespace Payroll
     {
         OleDbConnection con;
         OleDbCommand cmd;
-        OleDbDataReader dr;
+        readonly OleDbDataReader dr;
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +26,6 @@ namespace Payroll
         int weeks;
         string employeename;
         string department;
-        private DialogResult exc;
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -44,9 +43,6 @@ namespace Payroll
             DeductionsText.Text = "₱" + (grosspay - finalpay).ToString();
             NetPayText.Text = "₱" + finalpay.ToString();
 
-            try
-            {
-
                 if (EmployeeNameText.Text != "")
                 {
                     con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|/payroll_db.accdb");
@@ -60,11 +56,19 @@ namespace Payroll
                     con.Close();
                     MessageBox.Show("Record Saved Successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
-            catch (Exception)
-            {
+                else
+                {
+                EmployeeNameText.Focus();
                 MessageBox.Show("Please Provide Details!", "Opps! Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 EmptyError.Show();
+                }
+        }
+
+        private void EmployeeNameText_MouseLeave(object sender, EventArgs e)
+        {
+            if (EmployeeNameText.Text != "" || EmployeeNameText.Text != " ")
+            {
+                EmployeeNameText.Text = "Enter Name";
             }
         }
 
