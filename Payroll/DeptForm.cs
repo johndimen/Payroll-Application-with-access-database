@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +13,7 @@ namespace Payroll
 {
     public partial class DeptForm : Form
     {
-        private const string conString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source =C:\\Users\\KLG\\Desktop\\repos\\College-PayrollApplication-master\\Payroll\\payroll_db.accdb";
-        readonly OleDbConnection con = new OleDbConnection(conString);
-        readonly OleDbCommand cmd;
+     
         public DeptForm()
         {
             InitializeComponent();
@@ -32,6 +30,9 @@ namespace Payroll
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            Form adddeptform = new Form();
+            adddeptform.Show();
+
             /* 
             try
             {
