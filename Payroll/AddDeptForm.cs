@@ -14,7 +14,7 @@ namespace Payroll
     public partial class AddDeptForm : Form
     {
         OleDbCommand cmd;
-        OleDbCommand cmd1;
+        readonly OleDbCommand cmd1;
         readonly OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|/payroll_db.accdb");
 
         public AddDeptForm()
@@ -31,23 +31,24 @@ namespace Payroll
             }
             else 
             {
+                /*
                 int adminid = 1;
                 string add = "Add";
                 int id = 1;
                 string comment = "Added Successfully";
-
-                cmd = new OleDbCommand("insert into department(name) values(@deptname)", con);
-                cmd1 = new OleDbCommand("insert into audittrail(adminID,action,tableid,comment) values(@adminid,@add,@id,@comment)", con);
+                */
+                cmd = new OleDbCommand("insert into department(deptname) values(@deptname)", con);
+                //cmd1 = new OleDbCommand("insert into audittrail(action,tableid,comment) values(@add,@id,@comment)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@deptname", DeptNameTextBox.Text);
-                cmd1.Parameters.AddWithValue("@adminid", adminid);
-                cmd1.Parameters.AddWithValue("@add",add);
-                cmd1.Parameters.AddWithValue("@id", id);
-                cmd1.Parameters.AddWithValue("@comment", comment);
+                //cmd1.Parameters.AddWithValue("@add",add);
+                //cmd1.Parameters.AddWithValue("@id", id);
+                //cmd1.Parameters.AddWithValue("@comment", comment);
                 cmd.ExecuteNonQuery();
+                //cmd1.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record Saved Successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Form form1 = new Form();
+                Form1 form1 = new Form1();
                 this.Hide();
                 form1.Show();
             }
@@ -61,8 +62,16 @@ namespace Payroll
             }
             else
             {
-                MessageBox.Show("there are still unsaved changes." + Environment.NewLine + "are you sure you want to continue?","Textbox has been filled!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                DeptNameTextBox.Focus();
+                var result = MessageBox.Show("There are still unsaved changes." + Environment.NewLine + "are you sure you want to continue?","Textbox has been filled!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
+                if(result == DialogResult.Yes)
+                {
+                    this.Close();
+                } 
+                else if (result == DialogResult.No)
+                {
+                    DeptNameTextBox.Focus();
+                }
             } 
             
         }

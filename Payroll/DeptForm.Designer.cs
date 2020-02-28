@@ -34,13 +34,17 @@
             this.DeptLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.DeptDataGridView = new System.Windows.Forms.DataGridView();
-            this.deptnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.payroll_DeptDataSet = new Payroll.payroll_DeptDataSet();
             this.departmentTableAdapter = new Payroll.payroll_DeptDataSetTableAdapters.departmentTableAdapter();
+            this.payroll_dbDataSet = new Payroll.payroll_dbDataSet();
+            this.payrolldbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deptnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DeptDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_DeptDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_dbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrolldbDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BackButton
@@ -89,13 +93,6 @@
             this.DeptDataGridView.Size = new System.Drawing.Size(267, 150);
             this.DeptDataGridView.TabIndex = 7;
             // 
-            // deptnameDataGridViewTextBoxColumn
-            // 
-            this.deptnameDataGridViewTextBoxColumn.DataPropertyName = "deptname";
-            this.deptnameDataGridViewTextBoxColumn.HeaderText = "Department";
-            this.deptnameDataGridViewTextBoxColumn.Name = "deptnameDataGridViewTextBoxColumn";
-            this.deptnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // departmentBindingSource
             // 
             this.departmentBindingSource.DataMember = "department";
@@ -109,6 +106,23 @@
             // departmentTableAdapter
             // 
             this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // payroll_dbDataSet
+            // 
+            this.payroll_dbDataSet.DataSetName = "payroll_dbDataSet";
+            this.payroll_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // payrolldbDataSetBindingSource
+            // 
+            this.payrolldbDataSetBindingSource.DataSource = this.payroll_dbDataSet;
+            this.payrolldbDataSetBindingSource.Position = 0;
+            // 
+            // deptnameDataGridViewTextBoxColumn
+            // 
+            this.deptnameDataGridViewTextBoxColumn.DataPropertyName = "deptname";
+            this.deptnameDataGridViewTextBoxColumn.HeaderText = "deptname";
+            this.deptnameDataGridViewTextBoxColumn.Name = "deptnameDataGridViewTextBoxColumn";
+            this.deptnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // DeptForm
             // 
@@ -128,6 +142,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DeptDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_DeptDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_dbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrolldbDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +159,7 @@
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private payroll_DeptDataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn deptnameDataGridViewTextBoxColumn;
+        private payroll_dbDataSet payroll_dbDataSet;
+        private System.Windows.Forms.BindingSource payrolldbDataSetBindingSource;
     }
 }

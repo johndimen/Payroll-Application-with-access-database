@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CancelButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddDeptForm));
+            this.Cancelbutton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.AddDeptLabel = new System.Windows.Forms.Label();
             this.DeptNameLabel = new System.Windows.Forms.Label();
             this.DeptNameTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // CancelButton
+            // Cancelbutton
             // 
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelButton.Location = new System.Drawing.Point(274, 112);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(80, 29);
-            this.CancelButton.TabIndex = 0;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.Cancelbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancelbutton.Location = new System.Drawing.Point(274, 112);
+            this.Cancelbutton.Name = "Cancelbutton";
+            this.Cancelbutton.Size = new System.Drawing.Size(80, 29);
+            this.Cancelbutton.TabIndex = 0;
+            this.Cancelbutton.Text = "Cancel";
+            this.Cancelbutton.UseVisualStyleBackColor = true;
+            this.Cancelbutton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // SaveButton
             // 
@@ -94,9 +95,11 @@
             this.Controls.Add(this.DeptNameLabel);
             this.Controls.Add(this.AddDeptLabel);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.Cancelbutton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDeptForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddDeptForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,7 +108,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button Cancelbutton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Label AddDeptLabel;
         private System.Windows.Forms.Label DeptNameLabel;

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Data;
 using System.Linq;
 
 namespace Payroll
@@ -32,6 +33,24 @@ namespace Payroll
             Application.Exit();
         }
 
+        /*
+        public class ComboboxItem
+        {
+            public string Text { get; set; }
+            public string Value { get; set; }
+            public override string ToString() { return Text; }
+        }
+
+        private void DepartmentText_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox DeptBox = (ComboBox)sender;
+            int selectedIndex = DeptBox.SelectedIndex;
+            int selectedValue = (int)DeptBox.SelectedValue;
+
+            ComboboxItem selectedDept = (ComboboxItem)DeptBox.SelectedItem;
+        }
+        */
+
         private void CalcButton_Click(object sender, EventArgs e)
         {
             EmptyError.Hide();
@@ -43,30 +62,30 @@ namespace Payroll
             DeductionsText.Text = "₱" + (grosspay - finalpay).ToString();
             NetPayText.Text = "₱" + finalpay.ToString();
 
-                if (EmployeeNameText.Text != "")
-                {
-                    con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|/payroll_db.accdb");
-                    cmd = new OleDbCommand();
-                    const string sql = "insert into employee(empname,deptname) values (@empname,@deptname)";
-                    cmd = new OleDbCommand(sql, con);
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@empname", EmployeeNameText.Text);
-                    cmd.Parameters.AddWithValue("@deptname", DepartmentText.Text);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Record Saved Successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                if (string.IsNullOrWhiteSpace(EmployeeNameText.Text))
                 {
                 EmployeeNameText.Focus();
                 MessageBox.Show("Please Provide Details!", "Opps! Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 EmptyError.Show();
                 }
+                else
+                {
+                    con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|/payroll_db.accdb");
+                    const string sql = "insert into employee(empname,deptname,deptid) values (@empname,@deptname,@deptid)";
+                    cmd = new OleDbCommand(sql, con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@empname", EmployeeNameText.Text);
+                    cmd.Parameters.AddWithValue("@deptname", DepartmentText.Text);
+                    cmd.Parameters.AddWithValue("@deptid", DepartmentText.SelectedValue);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Record Saved Successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
         }
 
         private void EmployeeNameText_MouseLeave(object sender, EventArgs e)
         {
-            if (EmployeeNameText.Text != "" || EmployeeNameText.Text != " ")
+            if (string.IsNullOrWhiteSpace(EmployeeNameText.Text))
             {
                 EmployeeNameText.Text = "Enter Name";
             }
@@ -150,15 +169,15 @@ namespace Payroll
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'payroll_EmpDeptDataSet.employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.payroll_EmpDeptDataSet.employee);
-            //This line of code loads data into the 'payroll_dbDataSet.department' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'employeeDataSet.employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.employeeDataSet.employee);
+            // TODO: This line of code loads data into the 'payroll_dbDataSet.department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter.Fill(this.payroll_dbDataSet.department);
-
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
+            EmployeeNameText.Clear();
             Login login = new Login();
             login.Show();
             this.Hide();
@@ -200,8 +219,8 @@ namespace Payroll
 
         private void DeptButton_Click(object sender, EventArgs e)
         {
-            DeptForm deptForm = new DeptForm();
-            deptForm.Show();
+            DeptForm form = new DeptForm();
+            form.Show();
         }
 
     }

@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
-            this.DepartmentText = new System.Windows.Forms.ComboBox();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.payrolldbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.payroll_dbDataSet = new Payroll.payroll_dbDataSet();
             this.WeekChooser = new System.Windows.Forms.NumericUpDown();
             this.PayDateLabel = new System.Windows.Forms.Label();
@@ -65,55 +63,37 @@
             this.DeptButton = new System.Windows.Forms.Button();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.ChooseDirectory = new System.Windows.Forms.Button();
-            this.departmentTableAdapter = new Payroll.payroll_dbDataSetTableAdapters.departmentTableAdapter();
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deptnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.payroll_EmpDeptDataSet = new Payroll.payroll_EmpDeptDataSet();
-            this.employeeTableAdapter = new Payroll.payroll_EmpDeptDataSetTableAdapters.employeeTableAdapter();
+            this.employeeDataSet = new Payroll.EmployeeDataSet();
             this.EmployeeNameText = new System.Windows.Forms.TextBox();
+            this.departmentTableAdapter = new Payroll.payroll_dbDataSetTableAdapters.departmentTableAdapter();
+            this.employeeTableAdapter = new Payroll.EmployeeDataSetTableAdapters.employeeTableAdapter();
+            this.DepartmentText = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payrolldbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeekChooser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoursWorked)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_EmpDeptDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // DatePicker
             // 
-            this.DatePicker.Location = new System.Drawing.Point(94, 163);
+            this.DatePicker.Location = new System.Drawing.Point(94, 183);
             this.DatePicker.Name = "DatePicker";
             this.DatePicker.Size = new System.Drawing.Size(199, 20);
             this.DatePicker.TabIndex = 0;
             // 
-            // DepartmentText
-            // 
-            this.DepartmentText.DataSource = this.departmentBindingSource;
-            this.DepartmentText.DisplayMember = "deptname";
-            this.DepartmentText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DepartmentText.FormattingEnabled = true;
-            this.DepartmentText.Location = new System.Drawing.Point(86, 72);
-            this.DepartmentText.Name = "DepartmentText";
-            this.DepartmentText.Size = new System.Drawing.Size(121, 21);
-            this.DepartmentText.TabIndex = 3;
-            this.DepartmentText.ValueMember = "ID";
-            this.DepartmentText.Click += new System.EventHandler(this.DepartmentText_Click);
-            // 
             // departmentBindingSource
             // 
             this.departmentBindingSource.DataMember = "department";
-            this.departmentBindingSource.DataSource = this.payrolldbDataSetBindingSource;
-            // 
-            // payrolldbDataSetBindingSource
-            // 
-            this.payrolldbDataSetBindingSource.DataSource = this.payroll_dbDataSet;
-            this.payrolldbDataSetBindingSource.Position = 0;
+            this.departmentBindingSource.DataSource = this.payroll_dbDataSet;
             // 
             // payroll_dbDataSet
             // 
@@ -122,7 +102,7 @@
             // 
             // WeekChooser
             // 
-            this.WeekChooser.Location = new System.Drawing.Point(94, 189);
+            this.WeekChooser.Location = new System.Drawing.Point(94, 209);
             this.WeekChooser.Maximum = new decimal(new int[] {
             52,
             0,
@@ -146,7 +126,7 @@
             // PayDateLabel
             // 
             this.PayDateLabel.AutoSize = true;
-            this.PayDateLabel.Location = new System.Drawing.Point(13, 167);
+            this.PayDateLabel.Location = new System.Drawing.Point(13, 187);
             this.PayDateLabel.Name = "PayDateLabel";
             this.PayDateLabel.Size = new System.Drawing.Size(51, 13);
             this.PayDateLabel.TabIndex = 6;
@@ -155,7 +135,7 @@
             // WeekLabel
             // 
             this.WeekLabel.AutoSize = true;
-            this.WeekLabel.Location = new System.Drawing.Point(12, 191);
+            this.WeekLabel.Location = new System.Drawing.Point(12, 211);
             this.WeekLabel.Name = "WeekLabel";
             this.WeekLabel.Size = new System.Drawing.Size(36, 13);
             this.WeekLabel.TabIndex = 7;
@@ -182,7 +162,7 @@
             // HoursLabel
             // 
             this.HoursLabel.AutoSize = true;
-            this.HoursLabel.Location = new System.Drawing.Point(13, 217);
+            this.HoursLabel.Location = new System.Drawing.Point(13, 237);
             this.HoursLabel.Name = "HoursLabel";
             this.HoursLabel.Size = new System.Drawing.Size(76, 13);
             this.HoursLabel.TabIndex = 10;
@@ -289,7 +269,7 @@
             // 
             // HoursWorked
             // 
-            this.HoursWorked.Location = new System.Drawing.Point(94, 215);
+            this.HoursWorked.Location = new System.Drawing.Point(94, 235);
             this.HoursWorked.Maximum = new decimal(new int[] {
             8760,
             0,
@@ -334,7 +314,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 130);
+            this.label2.Location = new System.Drawing.Point(13, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 25);
             this.label2.TabIndex = 27;
@@ -355,7 +335,7 @@
             this.EmptyError.AutoSize = true;
             this.EmptyError.BackColor = System.Drawing.SystemColors.Control;
             this.EmptyError.ForeColor = System.Drawing.Color.Red;
-            this.EmptyError.Location = new System.Drawing.Point(91, 238);
+            this.EmptyError.Location = new System.Drawing.Point(83, 123);
             this.EmptyError.Name = "EmptyError";
             this.EmptyError.Size = new System.Drawing.Size(111, 13);
             this.EmptyError.TabIndex = 30;
@@ -413,10 +393,6 @@
             this.ChooseDirectory.UseVisualStyleBackColor = true;
             this.ChooseDirectory.Click += new System.EventHandler(this.ChooseDirectory_Click);
             // 
-            // departmentTableAdapter
-            // 
-            this.departmentTableAdapter.ClearBeforeFill = true;
-            // 
             // EmployeeDataGridView
             // 
             this.EmployeeDataGridView.AllowUserToAddRows = false;
@@ -446,30 +422,26 @@
             // empnameDataGridViewTextBoxColumn
             // 
             this.empnameDataGridViewTextBoxColumn.DataPropertyName = "empname";
-            this.empnameDataGridViewTextBoxColumn.HeaderText = "Employee";
+            this.empnameDataGridViewTextBoxColumn.HeaderText = "empname";
             this.empnameDataGridViewTextBoxColumn.Name = "empnameDataGridViewTextBoxColumn";
             this.empnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // deptnameDataGridViewTextBoxColumn
             // 
             this.deptnameDataGridViewTextBoxColumn.DataPropertyName = "deptname";
-            this.deptnameDataGridViewTextBoxColumn.HeaderText = "Department";
+            this.deptnameDataGridViewTextBoxColumn.HeaderText = "deptname";
             this.deptnameDataGridViewTextBoxColumn.Name = "deptnameDataGridViewTextBoxColumn";
             this.deptnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataMember = "employee";
-            this.employeeBindingSource.DataSource = this.payroll_EmpDeptDataSet;
+            this.employeeBindingSource.DataSource = this.employeeDataSet;
             // 
-            // payroll_EmpDeptDataSet
+            // employeeDataSet
             // 
-            this.payroll_EmpDeptDataSet.DataSetName = "payroll_EmpDeptDataSet";
-            this.payroll_EmpDeptDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeTableAdapter
-            // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
+            this.employeeDataSet.DataSetName = "EmployeeDataSet";
+            this.employeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EmployeeNameText
             // 
@@ -481,10 +453,32 @@
             this.EmployeeNameText.Click += new System.EventHandler(this.EmployeeNameText_Click);
             this.EmployeeNameText.MouseLeave += new System.EventHandler(this.EmployeeNameText_MouseLeave);
             // 
+            // departmentTableAdapter
+            // 
+            this.departmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
+            // DepartmentText
+            // 
+            this.DepartmentText.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.DepartmentText.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.departmentBindingSource, "deptname", true));
+            this.DepartmentText.DataSource = this.departmentBindingSource;
+            this.DepartmentText.DisplayMember = "deptname";
+            this.DepartmentText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DepartmentText.FormattingEnabled = true;
+            this.DepartmentText.Location = new System.Drawing.Point(84, 72);
+            this.DepartmentText.Name = "DepartmentText";
+            this.DepartmentText.Size = new System.Drawing.Size(121, 21);
+            this.DepartmentText.TabIndex = 35;
+            // 
             // Form1
             // 
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(725, 444);
+            this.Controls.Add(this.DepartmentText);
             this.Controls.Add(this.EmployeeDataGridView);
             this.Controls.Add(this.DeptButton);
             this.Controls.Add(this.MandarinLabel);
@@ -514,7 +508,6 @@
             this.Controls.Add(this.WeekLabel);
             this.Controls.Add(this.PayDateLabel);
             this.Controls.Add(this.WeekChooser);
-            this.Controls.Add(this.DepartmentText);
             this.Controls.Add(this.EmployeeNameText);
             this.Controls.Add(this.DatePicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -524,14 +517,13 @@
             this.Text = "Payroll";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payrolldbDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeekChooser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HoursWorked)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_EmpDeptDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,7 +531,6 @@
 
         #endregion
         private System.Windows.Forms.DateTimePicker DatePicker;
-        private System.Windows.Forms.ComboBox DepartmentText;
         private System.Windows.Forms.NumericUpDown WeekChooser;
         private System.Windows.Forms.Label PayDateLabel;
         private System.Windows.Forms.Label WeekLabel;
@@ -570,18 +561,18 @@
         private System.Windows.Forms.Button InvoicesButton;
         private System.Windows.Forms.Label MandarinLabel;
         private System.Windows.Forms.Button DeptButton;
-        private System.Windows.Forms.BindingSource payrolldbDataSetBindingSource;
+        private System.Windows.Forms.DataGridView EmployeeDataGridView;
+        private System.Windows.Forms.TextBox EmployeeNameText;
         private payroll_dbDataSet payroll_dbDataSet;
         private System.Windows.Forms.BindingSource departmentBindingSource;
         private payroll_dbDataSetTableAdapters.departmentTableAdapter departmentTableAdapter;
-        private System.Windows.Forms.DataGridView EmployeeDataGridView;
-        private payroll_EmpDeptDataSet payroll_EmpDeptDataSet;
+        private EmployeeDataSet employeeDataSet;
         private System.Windows.Forms.BindingSource employeeBindingSource;
-        private payroll_EmpDeptDataSetTableAdapters.employeeTableAdapter employeeTableAdapter;
+        private EmployeeDataSetTableAdapters.employeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deptnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox EmployeeNameText;
+        private System.Windows.Forms.ComboBox DepartmentText;
     }
 }
 

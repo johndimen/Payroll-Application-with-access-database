@@ -30,7 +30,7 @@ namespace Payroll
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Form adddeptform = new Form();
+            AddDeptForm adddeptform = new AddDeptForm();
             adddeptform.Show();
 
             /* 
