@@ -51,10 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0389B2EAF8B86C74DFB1D06FE904BEAF4F2F8BBF</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0C9632B87C148EA8D714E4E906B6956A2C073279</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Payroll_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Payroll_5_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -180,6 +180,7 @@
     <None Include="Payroll_1_TemporaryKey.pfx" />
     <None Include="Payroll_2_TemporaryKey.pfx" />
     <None Include="Payroll_3_TemporaryKey.pfx" />
+    <None Include="Payroll_5_TemporaryKey.pfx" />
     <None Include="payroll_dbDataSet.xsc">
       <DependentUpon>payroll_dbDataSet.xsd</DependentUpon>
     </None>

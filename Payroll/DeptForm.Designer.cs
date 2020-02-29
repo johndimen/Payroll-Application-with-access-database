@@ -34,12 +34,12 @@
             this.DeptLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.DeptDataGridView = new System.Windows.Forms.DataGridView();
+            this.deptnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.payroll_DeptDataSet = new Payroll.payroll_DeptDataSet();
             this.departmentTableAdapter = new Payroll.payroll_DeptDataSetTableAdapters.departmentTableAdapter();
             this.payroll_dbDataSet = new Payroll.payroll_dbDataSet();
             this.payrolldbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.deptnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DeptDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_DeptDataSet)).BeginInit();
@@ -49,9 +49,10 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(255, 199);
+            this.BackButton.Location = new System.Drawing.Point(340, 245);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(4);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(75, 23);
+            this.BackButton.Size = new System.Drawing.Size(100, 28);
             this.BackButton.TabIndex = 0;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -61,17 +62,19 @@
             // 
             this.DeptLabel.AutoSize = true;
             this.DeptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeptLabel.Location = new System.Drawing.Point(114, 9);
+            this.DeptLabel.Location = new System.Drawing.Point(152, 11);
+            this.DeptLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DeptLabel.Name = "DeptLabel";
-            this.DeptLabel.Size = new System.Drawing.Size(133, 25);
+            this.DeptLabel.Size = new System.Drawing.Size(166, 31);
             this.DeptLabel.TabIndex = 1;
             this.DeptLabel.Text = "Department";
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(12, 199);
+            this.AddButton.Location = new System.Drawing.Point(16, 245);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.Size = new System.Drawing.Size(100, 28);
             this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -87,11 +90,21 @@
             this.DeptDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deptnameDataGridViewTextBoxColumn});
             this.DeptDataGridView.DataSource = this.departmentBindingSource;
-            this.DeptDataGridView.Location = new System.Drawing.Point(38, 43);
+            this.DeptDataGridView.Location = new System.Drawing.Point(16, 52);
+            this.DeptDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.DeptDataGridView.Name = "DeptDataGridView";
             this.DeptDataGridView.ReadOnly = true;
-            this.DeptDataGridView.Size = new System.Drawing.Size(267, 150);
+            this.DeptDataGridView.RowHeadersWidth = 51;
+            this.DeptDataGridView.Size = new System.Drawing.Size(424, 185);
             this.DeptDataGridView.TabIndex = 7;
+            // 
+            // deptnameDataGridViewTextBoxColumn
+            // 
+            this.deptnameDataGridViewTextBoxColumn.DataPropertyName = "deptname";
+            this.deptnameDataGridViewTextBoxColumn.HeaderText = "Department";
+            this.deptnameDataGridViewTextBoxColumn.Name = "deptnameDataGridViewTextBoxColumn";
+            this.deptnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.deptnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // departmentBindingSource
             // 
@@ -117,24 +130,18 @@
             this.payrolldbDataSetBindingSource.DataSource = this.payroll_dbDataSet;
             this.payrolldbDataSetBindingSource.Position = 0;
             // 
-            // deptnameDataGridViewTextBoxColumn
-            // 
-            this.deptnameDataGridViewTextBoxColumn.DataPropertyName = "deptname";
-            this.deptnameDataGridViewTextBoxColumn.HeaderText = "deptname";
-            this.deptnameDataGridViewTextBoxColumn.Name = "deptnameDataGridViewTextBoxColumn";
-            this.deptnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // DeptForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 234);
+            this.ClientSize = new System.Drawing.Size(457, 288);
             this.Controls.Add(this.DeptDataGridView);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.DeptLabel);
             this.Controls.Add(this.BackButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DeptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeptForm";

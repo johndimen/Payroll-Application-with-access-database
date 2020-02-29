@@ -66,13 +66,14 @@
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deptnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeDataSet = new Payroll.EmployeeDataSet();
+            this.deptnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeNameText = new System.Windows.Forms.TextBox();
             this.departmentTableAdapter = new Payroll.payroll_dbDataSetTableAdapters.departmentTableAdapter();
             this.employeeTableAdapter = new Payroll.EmployeeDataSetTableAdapters.employeeTableAdapter();
             this.DepartmentText = new System.Windows.Forms.ComboBox();
+            this.DirErrorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WeekChooser)).BeginInit();
@@ -87,7 +88,7 @@
             // 
             this.DatePicker.Location = new System.Drawing.Point(94, 183);
             this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(199, 20);
+            this.DatePicker.Size = new System.Drawing.Size(199, 22);
             this.DatePicker.TabIndex = 0;
             // 
             // departmentBindingSource
@@ -114,7 +115,7 @@
             0,
             0});
             this.WeekChooser.Name = "WeekChooser";
-            this.WeekChooser.Size = new System.Drawing.Size(135, 20);
+            this.WeekChooser.Size = new System.Drawing.Size(135, 22);
             this.WeekChooser.TabIndex = 5;
             this.WeekChooser.Value = new decimal(new int[] {
             1,
@@ -128,7 +129,7 @@
             this.PayDateLabel.AutoSize = true;
             this.PayDateLabel.Location = new System.Drawing.Point(13, 187);
             this.PayDateLabel.Name = "PayDateLabel";
-            this.PayDateLabel.Size = new System.Drawing.Size(51, 13);
+            this.PayDateLabel.Size = new System.Drawing.Size(66, 17);
             this.PayDateLabel.TabIndex = 6;
             this.PayDateLabel.Text = "Pay Date";
             // 
@@ -137,7 +138,7 @@
             this.WeekLabel.AutoSize = true;
             this.WeekLabel.Location = new System.Drawing.Point(12, 211);
             this.WeekLabel.Name = "WeekLabel";
-            this.WeekLabel.Size = new System.Drawing.Size(36, 13);
+            this.WeekLabel.Size = new System.Drawing.Size(44, 17);
             this.WeekLabel.TabIndex = 7;
             this.WeekLabel.Text = "Week";
             // 
@@ -146,7 +147,7 @@
             this.EmployeeNameLabel.AutoSize = true;
             this.EmployeeNameLabel.Location = new System.Drawing.Point(13, 103);
             this.EmployeeNameLabel.Name = "EmployeeNameLabel";
-            this.EmployeeNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.EmployeeNameLabel.Size = new System.Drawing.Size(45, 17);
             this.EmployeeNameLabel.TabIndex = 8;
             this.EmployeeNameLabel.Text = "Name";
             // 
@@ -155,7 +156,7 @@
             this.DepartmentLabel.AutoSize = true;
             this.DepartmentLabel.Location = new System.Drawing.Point(15, 75);
             this.DepartmentLabel.Name = "DepartmentLabel";
-            this.DepartmentLabel.Size = new System.Drawing.Size(62, 13);
+            this.DepartmentLabel.Size = new System.Drawing.Size(82, 17);
             this.DepartmentLabel.TabIndex = 9;
             this.DepartmentLabel.Text = "Department";
             // 
@@ -164,7 +165,7 @@
             this.HoursLabel.AutoSize = true;
             this.HoursLabel.Location = new System.Drawing.Point(13, 237);
             this.HoursLabel.Name = "HoursLabel";
-            this.HoursLabel.Size = new System.Drawing.Size(76, 13);
+            this.HoursLabel.Size = new System.Drawing.Size(99, 17);
             this.HoursLabel.TabIndex = 10;
             this.HoursLabel.Text = "Hours Worked";
             // 
@@ -193,7 +194,7 @@
             this.GrossPayText.Location = new System.Drawing.Point(122, 297);
             this.GrossPayText.Name = "GrossPayText";
             this.GrossPayText.ReadOnly = true;
-            this.GrossPayText.Size = new System.Drawing.Size(100, 20);
+            this.GrossPayText.Size = new System.Drawing.Size(100, 22);
             this.GrossPayText.TabIndex = 15;
             // 
             // GrossPayLabel
@@ -201,7 +202,7 @@
             this.GrossPayLabel.AutoSize = true;
             this.GrossPayLabel.Location = new System.Drawing.Point(61, 300);
             this.GrossPayLabel.Name = "GrossPayLabel";
-            this.GrossPayLabel.Size = new System.Drawing.Size(55, 13);
+            this.GrossPayLabel.Size = new System.Drawing.Size(74, 17);
             this.GrossPayLabel.TabIndex = 14;
             this.GrossPayLabel.Text = "Gross Pay";
             // 
@@ -210,7 +211,7 @@
             this.DeductionsText.Location = new System.Drawing.Point(122, 333);
             this.DeductionsText.Name = "DeductionsText";
             this.DeductionsText.ReadOnly = true;
-            this.DeductionsText.Size = new System.Drawing.Size(100, 20);
+            this.DeductionsText.Size = new System.Drawing.Size(100, 22);
             this.DeductionsText.TabIndex = 17;
             // 
             // DeductionsLabel
@@ -218,7 +219,7 @@
             this.DeductionsLabel.AutoSize = true;
             this.DeductionsLabel.Location = new System.Drawing.Point(55, 336);
             this.DeductionsLabel.Name = "DeductionsLabel";
-            this.DeductionsLabel.Size = new System.Drawing.Size(61, 13);
+            this.DeductionsLabel.Size = new System.Drawing.Size(79, 17);
             this.DeductionsLabel.TabIndex = 16;
             this.DeductionsLabel.Text = "Deductions";
             // 
@@ -227,7 +228,7 @@
             this.NetPayLabel.AutoSize = true;
             this.NetPayLabel.Location = new System.Drawing.Point(71, 370);
             this.NetPayLabel.Name = "NetPayLabel";
-            this.NetPayLabel.Size = new System.Drawing.Size(45, 13);
+            this.NetPayLabel.Size = new System.Drawing.Size(58, 17);
             this.NetPayLabel.TabIndex = 18;
             this.NetPayLabel.Text = "Net Pay";
             // 
@@ -236,7 +237,7 @@
             this.NetPayText.Location = new System.Drawing.Point(122, 367);
             this.NetPayText.Name = "NetPayText";
             this.NetPayText.ReadOnly = true;
-            this.NetPayText.Size = new System.Drawing.Size(100, 20);
+            this.NetPayText.Size = new System.Drawing.Size(100, 22);
             this.NetPayText.TabIndex = 19;
             // 
             // CalcButton
@@ -253,9 +254,9 @@
             // 
             this.DirectoryText.Location = new System.Drawing.Point(309, 401);
             this.DirectoryText.Name = "DirectoryText";
-            this.DirectoryText.Size = new System.Drawing.Size(172, 20);
+            this.DirectoryText.ReadOnly = true;
+            this.DirectoryText.Size = new System.Drawing.Size(172, 22);
             this.DirectoryText.TabIndex = 22;
-            this.DirectoryText.Text = "C:\\Users\\KLG\\Desktop\\repos\\College-PayrollApplication-master";
             // 
             // GenInvoice
             // 
@@ -281,7 +282,7 @@
             0,
             0});
             this.HoursWorked.Name = "HoursWorked";
-            this.HoursWorked.Size = new System.Drawing.Size(135, 20);
+            this.HoursWorked.Size = new System.Drawing.Size(135, 22);
             this.HoursWorked.TabIndex = 24;
             this.HoursWorked.Value = new decimal(new int[] {
             1,
@@ -296,7 +297,7 @@
             this.FormTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormTitle.Location = new System.Drawing.Point(257, 9);
             this.FormTitle.Name = "FormTitle";
-            this.FormTitle.Size = new System.Drawing.Size(271, 39);
+            this.FormTitle.Size = new System.Drawing.Size(340, 52);
             this.FormTitle.TabIndex = 25;
             this.FormTitle.Text = "iTec-Ming-Ming";
             // 
@@ -306,7 +307,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 25);
+            this.label1.Size = new System.Drawing.Size(225, 31);
             this.label1.TabIndex = 26;
             this.label1.Text = "Employee Details";
             // 
@@ -316,7 +317,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 25);
+            this.label2.Size = new System.Drawing.Size(202, 31);
             this.label2.TabIndex = 27;
             this.label2.Text = "Finance Details";
             // 
@@ -337,7 +338,7 @@
             this.EmptyError.ForeColor = System.Drawing.Color.Red;
             this.EmptyError.Location = new System.Drawing.Point(83, 123);
             this.EmptyError.Name = "EmptyError";
-            this.EmptyError.Size = new System.Drawing.Size(111, 13);
+            this.EmptyError.Size = new System.Drawing.Size(150, 17);
             this.EmptyError.TabIndex = 30;
             this.EmptyError.Text = "There are empty fields";
             this.EmptyError.Visible = false;
@@ -358,7 +359,7 @@
             this.MandarinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MandarinLabel.Location = new System.Drawing.Point(349, 48);
             this.MandarinLabel.Name = "MandarinLabel";
-            this.MandarinLabel.Size = new System.Drawing.Size(78, 25);
+            this.MandarinLabel.Size = new System.Drawing.Size(98, 31);
             this.MandarinLabel.TabIndex = 32;
             this.MandarinLabel.Text = "伊泰明";
             // 
@@ -399,39 +400,37 @@
             this.EmployeeDataGridView.AllowUserToDeleteRows = false;
             this.EmployeeDataGridView.AllowUserToOrderColumns = true;
             this.EmployeeDataGridView.AutoGenerateColumns = false;
+            this.EmployeeDataGridView.ColumnHeadersHeight = 29;
             this.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.EmployeeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
-            this.empnameDataGridViewTextBoxColumn,
-            this.deptnameDataGridViewTextBoxColumn});
+            this.empnameDataGridViewTextBoxColumn});
             this.EmployeeDataGridView.DataSource = this.employeeBindingSource;
             this.EmployeeDataGridView.Enabled = false;
-            this.EmployeeDataGridView.Location = new System.Drawing.Point(354, 217);
+            this.EmployeeDataGridView.Location = new System.Drawing.Point(384, 209);
             this.EmployeeDataGridView.Name = "EmployeeDataGridView";
             this.EmployeeDataGridView.ReadOnly = true;
-            this.EmployeeDataGridView.Size = new System.Drawing.Size(345, 150);
+            this.EmployeeDataGridView.RowHeadersWidth = 51;
+            this.EmployeeDataGridView.Size = new System.Drawing.Size(304, 150);
             this.EmployeeDataGridView.TabIndex = 34;
             // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID Number";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 125;
             // 
             // empnameDataGridViewTextBoxColumn
             // 
             this.empnameDataGridViewTextBoxColumn.DataPropertyName = "empname";
-            this.empnameDataGridViewTextBoxColumn.HeaderText = "empname";
+            this.empnameDataGridViewTextBoxColumn.HeaderText = "Employee Name";
+            this.empnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.empnameDataGridViewTextBoxColumn.Name = "empnameDataGridViewTextBoxColumn";
             this.empnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // deptnameDataGridViewTextBoxColumn
-            // 
-            this.deptnameDataGridViewTextBoxColumn.DataPropertyName = "deptname";
-            this.deptnameDataGridViewTextBoxColumn.HeaderText = "deptname";
-            this.deptnameDataGridViewTextBoxColumn.Name = "deptnameDataGridViewTextBoxColumn";
-            this.deptnameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.empnameDataGridViewTextBoxColumn.Width = 125;
             // 
             // employeeBindingSource
             // 
@@ -443,11 +442,17 @@
             this.employeeDataSet.DataSetName = "EmployeeDataSet";
             this.employeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // deptnameDataGridViewTextBoxColumn
+            // 
+            this.deptnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.deptnameDataGridViewTextBoxColumn.Name = "deptnameDataGridViewTextBoxColumn";
+            this.deptnameDataGridViewTextBoxColumn.Width = 125;
+            // 
             // EmployeeNameText
             // 
             this.EmployeeNameText.Location = new System.Drawing.Point(84, 100);
             this.EmployeeNameText.Name = "EmployeeNameText";
-            this.EmployeeNameText.Size = new System.Drawing.Size(202, 20);
+            this.EmployeeNameText.Size = new System.Drawing.Size(202, 22);
             this.EmployeeNameText.TabIndex = 2;
             this.EmployeeNameText.Text = "Enter Name";
             this.EmployeeNameText.Click += new System.EventHandler(this.EmployeeNameText_Click);
@@ -471,13 +476,26 @@
             this.DepartmentText.FormattingEnabled = true;
             this.DepartmentText.Location = new System.Drawing.Point(84, 72);
             this.DepartmentText.Name = "DepartmentText";
-            this.DepartmentText.Size = new System.Drawing.Size(121, 21);
+            this.DepartmentText.Size = new System.Drawing.Size(121, 24);
             this.DepartmentText.TabIndex = 35;
+            // 
+            // DirErrorLabel
+            // 
+            this.DirErrorLabel.AutoSize = true;
+            this.DirErrorLabel.BackColor = System.Drawing.SystemColors.Control;
+            this.DirErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.DirErrorLabel.Location = new System.Drawing.Point(319, 426);
+            this.DirErrorLabel.Name = "DirErrorLabel";
+            this.DirErrorLabel.Size = new System.Drawing.Size(109, 17);
+            this.DirErrorLabel.TabIndex = 36;
+            this.DirErrorLabel.Text = "File path not set";
+            this.DirErrorLabel.Visible = false;
             // 
             // Form1
             // 
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(725, 444);
+            this.ClientSize = new System.Drawing.Size(725, 456);
+            this.Controls.Add(this.DirErrorLabel);
             this.Controls.Add(this.DepartmentText);
             this.Controls.Add(this.EmployeeDataGridView);
             this.Controls.Add(this.DeptButton);
@@ -573,6 +591,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn empnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deptnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox DepartmentText;
+        private System.Windows.Forms.Label DirErrorLabel;
     }
 }
 

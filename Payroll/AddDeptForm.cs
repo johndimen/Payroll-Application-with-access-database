@@ -48,9 +48,9 @@ namespace Payroll
                 //cmd1.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Record Saved Successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Form1 form1 = new Form1();
+                Form1 form = new Form1();
                 this.Hide();
-                form1.Show();
+                form.Show();
             }
         }
 

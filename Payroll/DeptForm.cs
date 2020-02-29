@@ -31,6 +31,7 @@ namespace Payroll
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddDeptForm adddeptform = new AddDeptForm();
+            this.Hide();
             adddeptform.Show();
 
             /* 
@@ -76,8 +77,6 @@ namespace Payroll
             editbtn.UseColumnTextForButtonValue = true;
 
         }
-
-
 
     }
 

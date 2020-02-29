@@ -71,12 +71,10 @@ namespace Payroll
                 else
                 {
                     con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|/payroll_db.accdb");
-                    const string sql = "insert into employee(empname,deptname,deptid) values (@empname,@deptname,@deptid)";
+                    const string sql = "insert into employee(empname) values (@empname)";
                     cmd = new OleDbCommand(sql, con);
                     con.Open();
                     cmd.Parameters.AddWithValue("@empname", EmployeeNameText.Text);
-                    cmd.Parameters.AddWithValue("@deptname", DepartmentText.Text);
-                    cmd.Parameters.AddWithValue("@deptid", DepartmentText.SelectedValue);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Record Saved Successfully!", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -114,7 +112,10 @@ namespace Payroll
 
         private void GenInvoice_Click(object sender, EventArgs e)
         {
+            //string deduct = DeductionsText.Text;
+            //string net = NetPayText.Text;
             if (EmployeeNameText.Text != "" && DepartmentText.Text != "" && GrossPayText.Text != "" && DeductionsText.Text != "" && NetPayText.Text != "")
+            //if(string.IsNullOrEmpty(employeename + department + grosspay.ToString() + deduct + net))
             {
                 EmptyError.Hide();
                 employeename = EmployeeNameText.Text;
@@ -159,6 +160,7 @@ namespace Payroll
                 else
                 {
                     MessageBox.Show("The directory does not exist!", "Opps! Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DirErrorLabel.Show();
                 }
             }
             else
@@ -185,14 +187,18 @@ namespace Payroll
 
         private void InvoicesButton_Click(object sender, EventArgs e)
         {
+
             directory = DirectoryText.Text;
             if (System.IO.Directory.Exists(directory))
             {
                 Process.Start(directory);
+                DirErrorLabel.Hide();
             }
             else
             {
-                MessageBox.Show("The directory does not exist!");
+                MessageBox.Show("The directory path is not set or does not exist!","Opps! Something went wrong!",MessageBoxButtons.OK,MessageBoxIcon.Hand);
+                DirErrorLabel.Show();
+
             }
         }
 
@@ -200,21 +206,25 @@ namespace Payroll
         {
             EmployeeNameText.Text = "";
             EmptyError.Hide();
+            DirErrorLabel.Hide();
         }
 
         private void DepartmentText_Click(object sender, EventArgs e)
         {
             EmptyError.Hide();
+            DirErrorLabel.Hide();
         }
 
         private void HoursWorked_Click(object sender, EventArgs e)
         {
             EmptyError.Hide();
+            DirErrorLabel.Hide();
         }
 
         private void WeekChooser_Click(object sender, EventArgs e)
         {
             EmptyError.Hide();
+            DirErrorLabel.Hide();
         }
 
         private void DeptButton_Click(object sender, EventArgs e)
