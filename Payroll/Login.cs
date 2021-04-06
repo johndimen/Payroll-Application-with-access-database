@@ -28,7 +28,6 @@ namespace Payroll
             string pass = PasswordText.Text;
             con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|/payroll_db.accdb");
             cmd = new OleDbCommand();
-            con.Open();
             cmd.Connection = con;
             cmd.CommandText = "SELECT * FROM login where username='" + user + "' AND password='" + pass + "'";
             dr = cmd.ExecuteReader();
